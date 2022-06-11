@@ -23,10 +23,10 @@ public class PanneValidator {
         if(panneRequest.getDateDeclaration() == null){
             errors.add("Veuillez entrer la date de déclaration de la panne");
         }
-        if(panneRequest.getMecaniciens() == null){
+        if(panneRequest.getChauffeurMecanicienRequest() == null){
             errors.add("Veuillez préciser le chauffeur ayant déclaré  la panne");
         }
-        if(panneRequest.getVehicules() == null){
+        if(panneRequest.getVehiculeRequest() == null){
             errors.add("Veuillez préciser le véhicule concerné");
         }
         return errors;

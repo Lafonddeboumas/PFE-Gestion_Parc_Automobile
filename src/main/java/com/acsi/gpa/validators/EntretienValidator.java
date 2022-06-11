@@ -26,10 +26,10 @@ public class EntretienValidator {
         if(entretienRequest.getCout() == null){
             errors.add("Veuillez préciser la cout de l'entretien");
         }
-        if(entretienRequest.getMecaniciens() == null){
+        if(entretienRequest.getChauffeurMecanicienRequest() == null){
             errors.add("Veuillez préciser le mécanicen ayant éffectuer l'entretien");
         }
-        if(entretienRequest.getVehicules() == null){
+        if(entretienRequest.getVehiculeRequest() == null){
             errors.add("Veuillez préciser le véhicule concerné par l'entretien");
         }
         return errors;

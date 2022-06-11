@@ -25,7 +25,7 @@ public class AffectationValidator {
         if(affectationRequest.getDateAffectation() == null){
             errors.add("Veuillez préciser la date d'affectation");
         }
-        if(affectationRequest.getChauffeurMecanicien() == null){
+        if(affectationRequest.getChauffeurMecanicienRequest() == null){
             errors.add("Veuillez préciser le chauffeur");
         }
         if(affectationRequest.getHeureDepart() == null){
@@ -34,7 +34,7 @@ public class AffectationValidator {
         if(affectationRequest.getHeureRetour() == null){
             errors.add("Veuillez préciser le l'heure de retour");
         }
-        if(affectationRequest.getVehicules() == null){
+        if(affectationRequest.getVehiculeRequest()== null){
             errors.add("Veuillez préciser le véhicule affecté");
         }
         return errors;

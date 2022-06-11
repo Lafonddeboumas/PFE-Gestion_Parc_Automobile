@@ -18,6 +18,8 @@ import java.util.List;
 @NoArgsConstructor
 public class ChauffeurMecanicienResponse {
 
+    private Long idchauffeur;
+
     private String numpermis;
 
     private Date expPermis;

@@ -44,10 +44,10 @@ public class AssuranceServiceImpl implements AssuranceService  {
         }
 
         //Vérification que le vehicule enregistré existe bien dans la base de données
-        Optional<Vehicule> vehicule = vehiculeRepository.findById(assuranceRequest.getVehicule().getIdVehicule());
+        Optional<Vehicule> vehicule = vehiculeRepository.findById(assuranceRequest.getVehiculeRequest().getIdVehicule());
         if(vehicule.isEmpty()){
-            log.warn("véhicule with ID {} was not found in the BDD ",assuranceRequest.getVehicule().getIdVehicule());
-            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+assuranceRequest.getVehicule().getIdVehicule() +"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
+            log.warn("véhicule with ID {} was not found in the BDD ",assuranceRequest.getVehiculeRequest().getIdVehicule());
+            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+assuranceRequest.getVehiculeRequest().getIdVehicule() +"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
         }
 
         //Enregistrement de l'assurance

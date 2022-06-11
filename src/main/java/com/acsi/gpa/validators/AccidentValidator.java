@@ -30,10 +30,10 @@ public class AccidentValidator {
         if(accidentRequest.getHeureAccident() == null ){
             errors.add("Veuillez préciser l'heure de l'accident");
         }
-        if(accidentRequest.getMecaniciens()== null ){
+        if(accidentRequest.getChauffeurMecanicienRequest()== null ){
             errors.add("Veuillez préciser le chauffeur concerné");
         }
-        if(accidentRequest.getVehicule()== null ){
+        if(accidentRequest.getVehiculeRequest()== null ){
             errors.add("Veuillez préciser le véhicule concerné ");
         }
         return errors;

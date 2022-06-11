@@ -46,17 +46,17 @@ public class AffectationServiceImpl implements AffectationService {
         }
 
         //Vérification que le chauffeur enregistré existe bien dans la base de données
-        Optional<ChauffeurMecanicien> chauffeurMecanicien = chauffeurMecanicienRepository.findById(affectationRequest.getChauffeurMecanicien().getIdchauffeur());
+        Optional<ChauffeurMecanicien> chauffeurMecanicien = chauffeurMecanicienRepository.findById(affectationRequest.getChauffeurMecanicienRequest().getIdchauffeur());
         if(chauffeurMecanicien.isEmpty()){
-            log.warn("chauffeur with ID {} was not found in the BDD ",affectationRequest.getChauffeurMecanicien().getIdchauffeur());
-            throw new EntityNotFoundException("Aucun chauffeur avec l'ID"+affectationRequest.getChauffeurMecanicien().getIdchauffeur()+"n'a ete trouvé dans la base de données",ErrorsCode.CHAUFFEUR_NOT_FOUND);
+            log.warn("chauffeur with ID {} was not found in the BDD ",affectationRequest.getChauffeurMecanicienRequest().getIdchauffeur());
+            throw new EntityNotFoundException("Aucun chauffeur avec l'ID"+affectationRequest.getChauffeurMecanicienRequest().getIdchauffeur()+"n'a ete trouvé dans la base de données",ErrorsCode.CHAUFFEUR_NOT_FOUND);
         }
 
         //Vérification que le vehicule enregistré existe bien dans la base de données
-        Optional<Vehicule>  vehicule = vehiculeRepository.findById(affectationRequest.getVehicules().getIdVehicule());
+        Optional<Vehicule>  vehicule = vehiculeRepository.findById(affectationRequest.getVehiculeRequest().getIdVehicule());
         if(vehicule.isEmpty()){
-            log.warn("vehicule with ID {} was not found in the BDD ",affectationRequest.getVehicules().getIdVehicule());
-            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+affectationRequest.getVehicules().getIdVehicule() +"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
+            log.warn("vehicule with ID {} was not found in the BDD ",affectationRequest.getVehiculeRequest().getIdVehicule());
+            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+affectationRequest.getVehiculeRequest().getIdVehicule()+"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
         }
 
         //Enregistrement de l'affectaion

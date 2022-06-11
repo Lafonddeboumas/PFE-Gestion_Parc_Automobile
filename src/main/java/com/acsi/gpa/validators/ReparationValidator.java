@@ -29,10 +29,10 @@ public class ReparationValidator {
         if(reparationRequest.getFrais() == null){
             errors.add("Veuillez renseigner les frais de réparations du véhicule");
         }
-        if(reparationRequest.getMecaniciens() == null){
+        if(reparationRequest.getChauffeurMecanicienRequest() == null){
             errors.add("Veuillez préciser le mécanicien ayant réparé le véhicule");
         }
-        if(reparationRequest.getVehicules() == null){
+        if(reparationRequest.getVehiculeRequest() == null){
             errors.add("Veuillez préciser le véhicule réparé");
         }
         return  errors;

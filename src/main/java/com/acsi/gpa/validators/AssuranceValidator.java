@@ -30,7 +30,7 @@ public class AssuranceValidator {
         if(assuranceRequest.getFrais() == null){
             errors.add("Veuillez entrer les frais d'assurance");
         }
-        if(assuranceRequest.getVehicule() == null){
+        if(assuranceRequest.getVehiculeRequest() == null){
             errors.add("Veuillez renseigner le véhicule assurer");
         }
         return errors;

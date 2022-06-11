@@ -26,7 +26,7 @@ public class PieceValidator {
         if(pieceRequest.getPrix() == null){
             errors.add("Veuillez préciser le prix de la pièce");
         }
-        if(pieceRequest.getFournisseurs() == null){
+        if(pieceRequest.getFournisseurRequest() == null){
             errors.add("Veuillez préciser le fournisseur ayant vendu la pièce");
         }
         return errors;

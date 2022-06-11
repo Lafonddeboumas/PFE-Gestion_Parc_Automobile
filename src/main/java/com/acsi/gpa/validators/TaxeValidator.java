@@ -27,7 +27,7 @@ public class TaxeValidator {
         if(taxeRequest.getFrais() == null){
             errors.add("Veuillez préciser les frais de la taxe");
         }
-        if(taxeRequest.getVehicule() == null){
+        if(taxeRequest.getVehiculeRequest() == null){
             errors.add("Veuillez préciser le véhicule concerné par la taxe");
         }
         return errors;

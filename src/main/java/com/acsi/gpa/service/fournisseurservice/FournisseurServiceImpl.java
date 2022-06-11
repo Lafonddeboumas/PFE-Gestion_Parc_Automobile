@@ -39,10 +39,10 @@ public class FournisseurServiceImpl implements FournisseurService {
           throw new InvalidEntityException("fournisseur non valide", ErrorsCode.FOURNISSEUR_NOT_VALID,errors);
         }
 
-        Optional<TypeFournisseur> typeFournisseur = typeFournisseurRepository.findById(fournisseurRequest.getTypefournisseur().getIdTypeFour());
+        Optional<TypeFournisseur> typeFournisseur = typeFournisseurRepository.findById(fournisseurRequest.getTypeFournisseurRequest().getIdTypeFour());
         if (typeFournisseur.isEmpty()){
-            log.warn("le type fournisseur avec cet id n'existe pas dans la BDD",fournisseurRequest.getTypefournisseur().getIdTypeFour() );
-            throw new EntityNotFoundException("Aucun type de fournisseur avec l'ID"+fournisseurRequest.getTypefournisseur().getIdTypeFour()+"n'existe pas dans la BDD",ErrorsCode.TYPEFOURNISSEUR_NOT_FOUND);
+            log.warn("le type fournisseur avec cet id n'existe pas dans la BDD",fournisseurRequest.getTypeFournisseurRequest().getIdTypeFour() );
+            throw new EntityNotFoundException("Aucun type de fournisseur avec l'ID"+fournisseurRequest.getTypeFournisseurRequest().getIdTypeFour()+"n'existe pas dans la BDD",ErrorsCode.TYPEFOURNISSEUR_NOT_FOUND);
         }
         Fournisseur fournisseur = fournisseurMapper.FournisseurRequestDtoToFournisseur(fournisseurRequest);
         Fournisseur saveFournisseur = fournisseurRepository.save(fournisseur);

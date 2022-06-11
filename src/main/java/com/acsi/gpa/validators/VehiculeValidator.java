@@ -30,16 +30,16 @@ public class VehiculeValidator {
         if(!StringUtils.hasLength(vehiculeRequest.getPuissance())){
             errors.add("Veuillez préciser la puissance du véhicule");
         }
-        if(vehiculeRequest.getEtatVehicule() == null){
+        if(vehiculeRequest.getEtatvehiculeRequest() == null){
             errors.add("Veuillez renseigner l'état du véhicule");
         }
         if(vehiculeRequest.getDateAchat() == null){
             errors.add("Veuillez renseigner la date d'achat du véhicule");
         }
-        if(vehiculeRequest.getMarques() == null){
+        if(vehiculeRequest.getMarqueRequest() == null){
             errors.add("Veuillez renseigner la marque du véhicule");
         }
-        if(vehiculeRequest.getDirections() == null){
+        if(vehiculeRequest.getDirectionRequest() == null){
             errors.add("Veuillez préciser la direction auquelle appartient le véhicule");
         }
         return errors;

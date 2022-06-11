@@ -19,6 +19,8 @@ import java.util.List;
 @NoArgsConstructor
 public class ChauffeurMecanicienRequest {
 
+    private Long idchauffeur;
+
     private String numpermis;
 
     private Date expPermis;

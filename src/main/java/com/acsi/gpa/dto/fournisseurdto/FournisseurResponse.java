@@ -1,7 +1,6 @@
 package com.acsi.gpa.dto.fournisseurdto;
 
-import com.acsi.gpa.dto.typefournisseurservice.TypeFournisseurResponse;
-import com.acsi.gpa.entities.TypeFournisseur;
+import com.acsi.gpa.dto.typefournisseurdto.TypeFournisseurResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -18,13 +18,13 @@ public class PleinCarburantValidator {
         if(pleinCarburantRequest.getDatePlein() == null){
             errors.add("Veuillez renseigner la date de plein de carburant");
         }
-        if(pleinCarburantRequest.getFournisseurs() == null){
+        if(pleinCarburantRequest.getFournisseurRequest() == null){
             errors.add("Veuillez renseigner le fournisseur ");
         }
         if(pleinCarburantRequest.getQuantiteLitre() == null){
             errors.add("Veuillez renseigner la quantité de carburant");
         }
-        if(pleinCarburantRequest.getVehicules() == null){
+        if(pleinCarburantRequest.getVehiculeRequest() == null){
             errors.add("Veuillez préciser le véhicule");
         }
         return errors;

@@ -46,17 +46,17 @@ public class AccidentServiceImpl implements AccidentService {
         }
 
         //Vérification que le chauffeur enregistré existe bien dans la base de données
-        Optional<ChauffeurMecanicien>  chauffeurMecanicien = chauffeurMecanicienRepository.findById(accidentRequest.getMecaniciens().getIdchauffeur());
+        Optional<ChauffeurMecanicien>  chauffeurMecanicien = chauffeurMecanicienRepository.findById(accidentRequest.getChauffeurMecanicienRequest().getIdchauffeur() );
         if(chauffeurMecanicien.isEmpty()){
-            log.warn("chauffeur with ID {} was not found in the BDD ",accidentRequest.getMecaniciens().getIdchauffeur());
-            throw new EntityNotFoundException("Aucun chauffeur avec l'ID"+accidentRequest.getMecaniciens().getIdchauffeur()+"n'a ete trouvé dans la base de données",ErrorsCode.CHAUFFEUR_NOT_FOUND);
+            log.warn("chauffeur with ID {} was not found in the BDD ",accidentRequest.getChauffeurMecanicienRequest().getIdchauffeur());
+            throw new EntityNotFoundException("Aucun chauffeur avec l'ID"+accidentRequest.getChauffeurMecanicienRequest().getIdchauffeur()+"n'a ete trouvé dans la base de données",ErrorsCode.CHAUFFEUR_NOT_FOUND);
         }
 
         //Vérification que le vehicule enregistré existe bien dans la base de données
-        Optional<Vehicule>  vehicule = vehiculeRepository.findById(accidentRequest.getVehicule().getIdVehicule());
+        Optional<Vehicule>  vehicule = vehiculeRepository.findById(accidentRequest.getVehiculeRequest().getIdVehicule());
         if(vehicule.isEmpty()){
-            log.warn("vehicule with ID {} was not found in the BDD ",accidentRequest.getVehicule().getIdVehicule());
-            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+accidentRequest.getVehicule().getIdVehicule()  +"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
+            log.warn("vehicule with ID {} was not found in the BDD ",accidentRequest.getVehiculeRequest().getIdVehicule());
+            throw new EntityNotFoundException("Aucun véhicule avec l'ID"+accidentRequest.getVehiculeRequest().getIdVehicule()  +"n'a ete trouvé dans la base de données",ErrorsCode.VEHICULE_NOT_FOUND);
         }
 
         //Enregistrement de l'accident
